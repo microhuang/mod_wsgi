@@ -106,10 +106,10 @@ User ${MOD_WSGI_USER}
 Group ${MOD_WSGI_GROUP}
 
 <IfDefine MOD_WSGI_WITH_LISTENER_HOST>
-Listen %(host)s:%(port)s
+Listen %(host)s:${MOD_WSGI_HTTP_PORT}
 </IfDefine>
 <IfDefine !MOD_WSGI_WITH_LISTENER_HOST>
-Listen %(port)s
+Listen ${MOD_WSGI_HTTP_PORT}
 </IfDefine>
 
 <IfVersion < 2.4>
